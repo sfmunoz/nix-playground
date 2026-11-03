@@ -5,7 +5,7 @@
 ## References
 
 - [Nix](https://nix.dev/)
-- [NixOS](https://nixos.org/)
+- [NixOS](https://nixos.org/) → [NixOS Learn](https://nixos.org/learn/) → **[Nix Pills](https://nixos.org/guides/nix-pills/)**
 - [Nix is Simpler Than You Think | Derivations & Packages](https://www.youtube.com/watch?v=GBTTVrmqkfE)
   - Derivations
   - Packages

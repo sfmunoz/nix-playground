@@ -2,6 +2,8 @@
 
 [Nix](https://nix.dev/) + [NixOS](https://nixos.org/) playground repository.
 
+- [hello-sh](hello-sh/README.md)
+
 ## References
 
 - [Nix](https://nix.dev/)

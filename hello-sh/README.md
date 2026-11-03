@@ -52,6 +52,28 @@ it pointing at the same profile directory and still finds `manifest.json`.
 Caveat: this discards the list of packages the new-style profile held; they stay
 in the store but are no longer "installed".
 
+### Alternative: give `nix-env` its own profile
+
+Keeping the default profile untouched avoids the conversion altogether:
+
+```
+$ mkdir -p ~/profiles
+$ nix-env --install --file default.nix --profile ~/profiles/legacy
+
+$ ~/profiles/legacy/bin/hello.sh
+hello world
+
+$ nix-env --profile ~/profiles/legacy -q
+hello.sh
+```
+
+The profile is then independent: `nix profile` keeps managing the default one.
+The parent directory must exist, otherwise:
+```
+$ nix-env --install --file default.nix --profile ~/profiles/legacy
+error: opening lock file "/home/i12e/profiles/legacy.lock": No such file or directory
+```
+
 ### nix profile (new way)
 
 Install:

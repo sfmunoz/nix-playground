@@ -2,8 +2,6 @@
 
 [Nix](https://nix.dev/) + [NixOS](https://nixos.org/) playground repository.
 
-- [hello-sh](hello-sh/README.md)
-
 ## References
 
 - [Nix](https://nix.dev/)
@@ -16,3 +14,7 @@
 - [Nix Functions Explained | NixOS & Flakes Functions](https://www.youtube.com/watch?v=HiTgbsFlPzs)
 - [🧙 Master Nix Functions in 20 Minutes | From Basics to Real-World Examples](https://www.youtube.com/watch?v=gn5wc531LD8)
 - [Nix derivations: what your Nix file becomes, input hashes and the build sandbox](https://www.youtube.com/watch?v=K7MkLa2HnIk)
+
+## Examples
+
+- [hello-sh](hello-sh/README.md)

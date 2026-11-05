@@ -18,3 +18,15 @@
 ## Examples
 
 - [hello-sh](hello-sh/README.md)
+
+## Tips
+
+### Derivations: C analogy
+
+https://nixos.org/guides/nix-pills/06-our-first-derivation.html
+
+- `.nix` files are like `.c` files.
+- `.drv` files are intermediate files like `.o` files.
+  - The `.drv` describes how to build a derivation
+  - It’s the bare minimum information.
+- Out paths are then the product of the build.

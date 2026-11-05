@@ -13,5 +13,5 @@ derivation {
       chmod +x "$out/bin/hello.sh"
     ''
   ];
-  system = "x86_64-linux";
+  system = builtins.currentSystem;
 }

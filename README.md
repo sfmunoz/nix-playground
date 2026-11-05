@@ -45,6 +45,14 @@ $ nix derivation show /nix/store/iwyd1b3880yy1ppik8wnb1z5w4lasqgr-hello.sh.drv
 }
 ```
 
+### Realise a Nix derivation
+
+https://nixos.org/guides/nix-pills/06-our-first-derivation.html
+
+```
+$ nix-store -r /nix/store/z3hhlxbckx4g3n9sw91nnvlkjvyw754p-myname.drv
+```
+
 ### Inspecting source code
 
 Nixpkgs functions live on disk: `:p` prints the real store path and line.

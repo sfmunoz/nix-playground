@@ -53,6 +53,41 @@ https://nixos.org/guides/nix-pills/06-our-first-derivation.html
 $ nix-store -r /nix/store/z3hhlxbckx4g3n9sw91nnvlkjvyw754p-myname.drv
 ```
 
+### Full content of a derivation
+
+`:p` collapses any attribute set whose `type` is `"derivation"`, so dropping that
+attribute shows the whole value:
+
+```
+$ nix repl
+nix-repl> d = derivation { name = "myname"; builder = "mybuilder"; system = "mysystem"; }
+
+nix-repl> :p d
+«derivation /nix/store/z3hhlxbckx4g3n9sw91nnvlkjvyw754p-myname.drv»
+
+nix-repl> :p builtins.removeAttrs d [ "type" ]
+{
+  all = [
+    «derivation /nix/store/z3hhlxbckx4g3n9sw91nnvlkjvyw754p-myname.drv»
+  ];
+  builder = "mybuilder";
+  drvAttrs = {
+    builder = "mybuilder";
+    name = "myname";
+    system = "mysystem";
+  };
+  drvPath = "/nix/store/z3hhlxbckx4g3n9sw91nnvlkjvyw754p-myname.drv";
+  name = "myname";
+  out = «repeated»;
+  outPath = "/nix/store/40s0qmrfb45vlh6610rk29ym318dswdr-myname";
+  outputName = "out";
+  system = "mysystem";
+}
+```
+
+`drvAttrs` holds the inputs only; `nix derivation show d.drvPath` shows the stored
+`.drv` instead, including `env` and `inputs`.
+
 ### Inspecting source code
 
 Nixpkgs functions live on disk: `:p` prints the real store path and line.

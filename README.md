@@ -30,3 +30,17 @@ https://nixos.org/guides/nix-pills/06-our-first-derivation.html
   - The `.drv` describes how to build a derivation
   - It’s the bare minimum information.
 - Out paths are then the product of the build.
+
+### Nix derivation show
+
+https://nixos.org/guides/nix-pills/06-our-first-derivation.html
+
+```
+$ nix derivation show /nix/store/iwyd1b3880yy1ppik8wnb1z5w4lasqgr-hello.sh.drv
+{
+  "derivations": {
+    (...)
+  },
+  "version": 4
+}
+```

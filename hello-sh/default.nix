@@ -1,5 +1,7 @@
+{ system ? "x86_64-linux" }:
+
 let
-  pkgs = import <nixpkgs> { };
+  pkgs = import <nixpkgs> { inherit system; };
 in
 derivation {
   name = "hello.sh";
@@ -13,5 +15,5 @@ derivation {
       chmod +x "$out/bin/hello.sh"
     ''
   ];
-  system = builtins.currentSystem;
+  inherit system;
 }

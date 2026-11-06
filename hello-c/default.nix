@@ -1,5 +1,7 @@
+{ system ? "x86_64-linux" }:
+
 let
-  pkgs = import <nixpkgs> { };
+  pkgs = import <nixpkgs> { inherit system; };
 in
 derivation {
   name = "hello-c";
@@ -7,5 +9,5 @@ derivation {
   args = [ ./builder.sh ];
   inherit (pkgs) coreutils gcc;
   src = ./src/main.c;
-  system = builtins.currentSystem;
+  inherit system;
 }

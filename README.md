@@ -21,6 +21,7 @@
 ## Examples
 
 - [hello-sh](hello-sh/README.md)
+- [builder-sh](builder-sh/README.md)
 
 ## Tips
 

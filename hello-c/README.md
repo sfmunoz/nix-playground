@@ -8,7 +8,7 @@ https://nixos.org/guides/nix-pills/08-generic-builders.html
 
 ```
 $ nix-build hello-c
-/nix/store/902jh2hfsm5smgzwkd113mfh2j30v1c6-hello-c
+/nix/store/zwwr4ba28ahxx1x2fzp7ybb5p557817i-hello-c
 ```
 
 `result` is a symlink in the **current** directory, not in `hello-c`:

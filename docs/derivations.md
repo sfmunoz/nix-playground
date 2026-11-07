@@ -28,13 +28,13 @@ https://nixos.org/guides/nix-pills/06-our-first-derivation.html
 
 Build:
 ```
-$ nix-build hello-sh
+$ nix-build examples/01-hello-sh
 /nix/store/0kd3jhn6ylpgpk0a9rr4dmw8z00ap6gy-hello.sh
 ```
 
 Equivalent, in two steps: evaluate to a `.drv`, then realise it.
 ```
-$ nix-instantiate hello-sh
+$ nix-instantiate examples/01-hello-sh
 /nix/store/iwyd1b3880yy1ppik8wnb1z5w4lasqgr-hello.sh.drv
 
 $ nix-store -r /nix/store/iwyd1b3880yy1ppik8wnb1z5w4lasqgr-hello.sh.drv

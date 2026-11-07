@@ -7,11 +7,11 @@ https://nixos.org/guides/nix-pills/08-generic-builders.html
 ## Build
 
 ```
-$ nix-build hello-c
+$ nix-build examples/05-hello-c
 /nix/store/zwwr4ba28ahxx1x2fzp7ybb5p557817i-hello-c
 ```
 
-`result` is a symlink in the **current** directory, not in `hello-c`:
+`result` is a symlink in the **current** directory, not in `examples/05-hello-c`:
 
 ```
 $ ./result/hello-c

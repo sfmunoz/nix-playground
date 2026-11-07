@@ -1,6 +1,6 @@
 # Profiles: `nix profile` vs `nix-env`
 
-The commands use [`hello-sh/default.nix`](../hello-sh/README.md).
+The commands use [`examples/01-hello-sh/default.nix`](../examples/01-hello-sh/README.md).
 
 Both tools install into the same profile path,
 `~/.local/state/nix/profiles/profile`, but with different formats:

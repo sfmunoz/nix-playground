@@ -10,7 +10,7 @@ a flake reference:
 $ nix build hello-c
 error: cannot find flake 'flake:hello-c' in the flake registries
 
-$ nix build --file hello-c --no-link --print-out-paths
+$ nix build --file examples/05-hello-c --no-link --print-out-paths
 /nix/store/zwwr4ba28ahxx1x2fzp7ybb5p557817i-hello-c
 ```
 

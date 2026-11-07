@@ -24,11 +24,16 @@
 
 ## Examples
 
-- [hello-sh](hello-sh/README.md)
-- [hello-sh-flake](hello-sh-flake/README.md)
-- [builder-sh](builder-sh/README.md)
-- [hello-c](hello-c/README.md)
-- [hello-flake](hello-flake/README.md)
+A single artifact, three packaging styles:
+
+- [01-hello-sh](examples/01-hello-sh/README.md) — the simplest derivation: bare `derivation`, `import <nixpkgs>`, legacy `nix-build`.
+- [02-hello-sh-flake](examples/02-hello-sh-flake/README.md) — same derivation, packaged the flake way (`pkgs` passed in).
+- [03-hello-flake](examples/03-hello-flake/README.md) — no derivation at all: re-export `pkgs.hello` from a flake.
+
+Under the hood (Nix Pills):
+
+- [04-builder-sh](examples/04-builder-sh/README.md) — Pills ch. 7: derivation attributes as build-environment variables, the sandbox.
+- [05-hello-c](examples/05-hello-c/README.md) — Pills ch. 8: a real compiler, the `src` attribute, `let` vs derivation attributes.
 
 ## Topics
 

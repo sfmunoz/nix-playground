@@ -2,11 +2,11 @@
 
 ## hello-sh → hello-sh-flake
 
-`diff -u hello-sh/default.nix hello-sh-flake/default.nix`:
+`diff -u examples/01-hello-sh/default.nix examples/02-hello-sh-flake/default.nix`:
 
 ```diff
---- hello-sh/default.nix        2026-11-06 17:28:21.857035780 +0000
-+++ hello-sh-flake/default.nix  2026-11-06 19:02:49.360454863 +0000
+--- examples/01-hello-sh/default.nix        2026-11-06 17:28:21.857035780 +0000
++++ examples/02-hello-sh-flake/default.nix  2026-11-06 19:02:49.360454863 +0000
 @@ -1,8 +1,5 @@
 -{ system ? "x86_64-linux" }:
 +{ pkgs }:

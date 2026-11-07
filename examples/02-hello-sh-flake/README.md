@@ -1,14 +1,14 @@
 # hello-sh-flake
 
-Same output as [hello-sh](../hello-sh/README.md), packaged the flake way.
+Same output as [hello-sh](../01-hello-sh/README.md), packaged the flake way.
 
 ## hello-sh → hello-sh-flake
 
-`diff -u hello-sh/default.nix hello-sh-flake/default.nix`:
+`diff -u examples/01-hello-sh/default.nix examples/02-hello-sh-flake/default.nix`:
 
 ```diff
---- hello-sh/default.nix        2026-11-06 17:28:21.857035780 +0000
-+++ hello-sh-flake/default.nix  2026-11-06 19:02:49.360454863 +0000
+--- examples/01-hello-sh/default.nix        2026-11-06 17:28:21.857035780 +0000
++++ examples/02-hello-sh-flake/default.nix  2026-11-06 19:02:49.360454863 +0000
 @@ -1,8 +1,5 @@
 -{ system ? "x86_64-linux" }:
 +{ pkgs }:
@@ -30,10 +30,10 @@ Same output as [hello-sh](../hello-sh/README.md), packaged the flake way.
 
 ## hello-flake → hello-sh-flake
 
-`diff -u hello-flake/flake.nix hello-sh-flake/flake.nix`:
+`diff -u examples/03-hello-flake/flake.nix examples/02-hello-sh-flake/flake.nix`:
 ```diff
---- hello-flake/flake.nix       2026-11-07 07:53:30.900152398 +0000
-+++ hello-sh-flake/flake.nix    2026-11-07 07:53:53.732442483 +0000
+--- examples/03-hello-flake/flake.nix       2026-11-07 07:53:30.900152398 +0000
++++ examples/02-hello-sh-flake/flake.nix    2026-11-07 07:53:53.732442483 +0000
 @@ -5,7 +5,7 @@
 
    outputs = inputs: {
@@ -84,7 +84,7 @@ outputs = inputs: {
 - `legacyPackages` is keyed by system, so `mapAttrs` builds one package per system
   (10 on this nixpkgs) without any `systems = [ … ]` list and without `flake-utils`.
 - `default` makes `nix build .#` resolve to the package.
-- The attribute is named `hello`, same as in [hello-flake](../hello-flake/flake.nix),
+- The attribute is named `hello`, same as in [hello-flake](../03-hello-flake/flake.nix),
   so the two `flake.nix` files differ in exactly one line: `pkgs.hello` versus
   `import ./default.nix { inherit pkgs; }`.
 - `system = pkgs.stdenv.hostPlatform.system;` inside the derivation — `builtins.currentSystem`
@@ -121,14 +121,14 @@ Run from this directory (`nix build .#hello`), or point at it explicitly from
 the repository root:
 
 ```
-$ nix build ./hello-sh-flake#hello
+$ nix build ./examples/02-hello-sh-flake#hello
 /nix/store/5hx1gk1dipib3spw0rb916lh07jra5n1-hello.sh
 ```
 
 ## Caveats
 
 - This is a **nested flake**: the flake root is the git repository, with
-  `?dir=hello-sh-flake`. Only **git-tracked** files are visible; an untracked
+  `?dir=examples/02-hello-sh-flake`. Only **git-tracked** files are visible; an untracked
   `default.nix` change builds the old version.
 - The input is a channel URL, so `nix flake update` moves it. Pin `rev=` to freeze.
 - `nix flake show` evaluates all 10 systems and is slow; non-native systems are

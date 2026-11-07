@@ -31,9 +31,9 @@ the path without a `result` symlink.
 ```nix
 outputs = inputs: {
   packages = builtins.mapAttrs (system: pkgs: {
-    hello-sh = import ./default.nix { inherit pkgs; };
+    hello = import ./default.nix { inherit pkgs; };
 
-    default = inputs.self.packages.${system}.hello-sh;
+    default = inputs.self.packages.${system}.hello;
   }) inputs.nixpkgs.legacyPackages;
 };
 ```
@@ -41,6 +41,9 @@ outputs = inputs: {
 - `legacyPackages` is keyed by system, so `mapAttrs` builds one package per system
   (10 on this nixpkgs) without any `systems = [ … ]` list and without `flake-utils`.
 - `default` makes `nix build .#` resolve to the package.
+- The attribute is named `hello`, same as in [hello-flake](../hello-flake/flake.nix),
+  so the two `flake.nix` files differ in exactly one line: `pkgs.hello` versus
+  `import ./default.nix { inherit pkgs; }`.
 - `system = pkgs.stdenv.hostPlatform.system;` inside the derivation — `builtins.currentSystem`
   cannot be used under pure evaluation.
 - `pkgs.system` still works but warns:
@@ -71,11 +74,11 @@ $ nix build hello-sh-flake
 error: cannot find flake 'flake:hello-sh-flake' in the flake registries
 ```
 
-Run from this directory (`nix build .#hello-sh`), or point at it explicitly from
+Run from this directory (`nix build .#hello`), or point at it explicitly from
 the repository root:
 
 ```
-$ nix build ./hello-sh-flake#hello-sh
+$ nix build ./hello-sh-flake#hello
 /nix/store/5hx1gk1dipib3spw0rb916lh07jra5n1-hello.sh
 ```
 

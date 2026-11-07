@@ -1,1 +1,7 @@
+# Nix build output symlinks (`nix-build` leaves `result`, flake builds may leave
+# `result-<name>`)
 result
+result-*
+
+# direnv
+.direnv

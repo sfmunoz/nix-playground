@@ -27,8 +27,8 @@
 A single artifact, three packaging styles:
 
 - [01-hello-sh](examples/01-hello-sh/README.md) — the simplest derivation: bare `derivation`, `import <nixpkgs>`, legacy `nix-build`.
-- [02-hello-sh-flake](examples/02-hello-sh-flake/README.md) — same derivation, packaged the flake way (`pkgs` passed in).
-- [03-hello-flake](examples/03-hello-flake/README.md) — no derivation at all: re-export `pkgs.hello` from a flake.
+- [02-hello-flake](examples/02-hello-flake/README.md) — no derivation at all: re-export `pkgs.hello` from a flake.
+- [03-hello-sh-flake](examples/03-hello-sh-flake/README.md) — same derivation as 01, packaged the flake way (`pkgs` passed in).
 
 Under the hood (Nix Pills):
 

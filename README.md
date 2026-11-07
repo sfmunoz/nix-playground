@@ -17,6 +17,9 @@
 - Cheatsheet
   - [Nixcademy](https://nixcademy.com/downloads/cheatsheet.pdf) (PDF)
   - [Cheat Sheets](https://cheatsheets.zip/nix)
+- Nixpkgs
+  - [NixOS/nixpkgs](https://github.com/NixOS/nixpkgs)
+  - [sfmunoz/nixpkgs](https://github.com/sfmunoz/nixpkgs)
 
 ## Examples
 

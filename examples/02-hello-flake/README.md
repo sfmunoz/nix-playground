@@ -16,3 +16,23 @@
        default = inputs.self.packages.${system}.hello;
      }) inputs.nixpkgs.legacyPackages;
 ```
+
+## Build
+
+```
+$ nix build .#hello
+$ ./result/bin/hello
+Hello, world!
+```
+
+`nix build` (or `nix build .`) resolves through the `default` attribute to the same
+package; `--no-link --print-out-paths` prints the store path without a symlink.
+
+## Run
+
+```
+$ nix run .#hello
+Hello, world!
+```
+
+This flake re-exports `pkgs.hello` unchanged — it defines no derivation of its own.

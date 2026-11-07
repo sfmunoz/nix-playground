@@ -227,7 +227,8 @@ plain `default.nix`. Migration map:
 | `nix-env -q` | `nix profile list` | |
 | `nix-env -e foo` | `nix profile remove foo` | |
 | `nix-channel --update` | `nix flake update` | channels are the impure pinning mechanism |
-| `nix-store -q --references` | `nix path-info -r` | |
+| `nix-store -q --references` | `nix path-info --json ./result` | the `references` field: **direct** deps only |
+| `nix-store -q --requisites` (`-R`) | `nix path-info -r` | full **closure**, not direct refs |
 | `nix-collect-garbage` | `nix store gc` | |
 | `nix-copy-closure` | `nix copy` | |
 | `nix-hash` | `nix hash` | |

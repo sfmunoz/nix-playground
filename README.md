@@ -24,7 +24,7 @@
 - [hello-sh-flake](hello-sh-flake/README.md)
 - [builder-sh](builder-sh/README.md)
 - [hello-c](hello-c/README.md)
-- [hello-flake](hello-flake/flake.nix)
+- [hello-flake](hello-flake/README.md)
 
 ## Tips
 

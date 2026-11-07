@@ -28,7 +28,7 @@
 
 ## Tips
 
-### The simplest derivation
+### The simplest derivation: name + builder + system
 
 https://nixos.org/guides/nix-pills/18-nix-store-paths.html
 

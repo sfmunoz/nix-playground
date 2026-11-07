@@ -28,6 +28,18 @@
 
 ## Tips
 
+### The simplest derivation
+
+https://nixos.org/guides/nix-pills/18-nix-store-paths.html
+
+...the simplest derivation you can write has a name, a builder and the system:
+
+```
+$ nix repl
+nix-repl> derivation { system = "x86_64-linux"; builder = ./myfile; name = "foo"; }
+«derivation /nix/store/y4h73bmrc9ii5bxg6i7ck6hsf5gqv8ck-foo.drv»
+```
+
 ### Nix compile
 
 Build:
